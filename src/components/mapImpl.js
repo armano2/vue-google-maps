@@ -64,10 +64,10 @@ const linkedMethods = [
 ].reduce((all, methodName) => {
   all[methodName] = function () {
     if (this.$mapObject)
-      this.$mapObject[methodName].apply(this.$mapObject, arguments)
-  }
-  return all
-}, {})
+      this.$mapObject[methodName].apply(this.$mapObject, arguments);
+  };
+  return all;
+}, {});
 
 // Other convenience methods exposed by Vue Google Maps
 const customMethods = {
@@ -112,20 +112,20 @@ export default {
       this.$mapObject.setCenter({
         lat: this.finalLat,
         lng: this.finalLng,
-      })
-    }
-    this.$watch('finalLat', updateCenter)
-    this.$watch('finalLng', updateCenter)
+      });
+    };
+    this.$watch('finalLat', updateCenter);
+    this.$watch('finalLng', updateCenter);
   },
 
   computed: {
     finalLat () {
       return this.center &&
-        (typeof this.center.lat === 'function') ? this.center.lat() : this.center.lat
+        (typeof this.center.lat === 'function') ? this.center.lat() : this.center.lat;
     },
     finalLng () {
       return this.center &&
-        (typeof this.center.lng === 'function') ? this.center.lng() : this.center.lng
+        (typeof this.center.lng === 'function') ? this.center.lng() : this.center.lng;
     },
   },
 
