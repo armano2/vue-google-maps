@@ -154,15 +154,23 @@ export default {
 
       // manually trigger center and zoom
       this.$mapObject.addListener('center_changed', () => {
-        this.$emit('center_changed', this.$mapObject.getCenter());
-      });
-      this.$mapObject.addListener('zoom_changed', () => {
-        this.$emit('zoom_changed', this.$mapObject.getZoom());
-      });
-      this.$mapObject.addListener('bounds_changed', () => {
-        this.$emit('bounds_changed', this.$mapObject.getBounds());
+        if (this.$listeners && this.$listeners.center_changed) {
+          this.$emit('center_changed', this.$mapObject.getCenter());
+        }
       });
 
+      this.$mapObject.addListener('zoom_changed', () => {
+        if (this.$listeners && this.$listeners.zoom_changed) {
+          this.$emit('zoom_changed', this.$mapObject.getZoom());
+        }
+      });
+
+      this.$mapObject.addListener('bounds_changed', () => {
+        if (this.$listeners && this.$listeners.bounds_changed) {
+          this.$emit('bounds_changed', this.$mapObject.getBounds());
+        }
+      });
+  
       //binding events
       eventsBinder(this, this.$mapObject, events);
 

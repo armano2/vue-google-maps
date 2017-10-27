@@ -6,7 +6,9 @@ export default (vueElement, googleMapObject, events) => {
   forEach(events, (eventName) => {
     const exposedName = eventName;
     googleMapObject.addListener(eventName, (ev) => {
-      vueElement.$emit(exposedName, ev);
+      if (vueElement.$listeners && this.$listeners[eventName]) {
+        vueElement.$emit(exposedName, ev);
+      }
     });
   });
 };
