@@ -1,4 +1,4 @@
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
+
 
 const mutatorObservatorConfig = {
   attributes: true,

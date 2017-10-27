@@ -1,5 +1,3 @@
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
 var setUp = false;
 
 export const loaded = new Promise((resolve, reject) => { // eslint-disable-line no-unused-vars

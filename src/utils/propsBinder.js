@@ -1,5 +1,3 @@
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
 import {forEach} from 'lodash';
 
 function capitalizeFirstLetter(string) {
@@ -16,7 +14,7 @@ export default (vueElement, googleMapsElement, props, options) => {
     const initialValue = vueElement[attribute];
 
     if(typeof googleMapsElement[setMethodName] === 'undefined'){
-      throw new Error(`${setMethodName} is not a method of (the Maps object corresponding to) ${vueElement.$options._componentTag}`)
+      throw new Error(`${setMethodName} is not a method of (the Maps object corresponding to) ${vueElement.$options._componentTag}`);
     }
 
     // We need to avoid an endless
@@ -44,12 +42,12 @@ export default (vueElement, googleMapsElement, props, options) => {
       let tick = 0, expectedTick = 0;
 
       const raiseExpectation = () => {
-        expectedTick += 1
-      }
+        expectedTick += 1;
+      };
 
       const updateTick = () => {
-        tick = Math.max(expectedTick, tick + 1)
-      }
+        tick = Math.max(expectedTick, tick + 1);
+      };
 
       const respondToChange = () => {
         if (tick < expectedTick) {
@@ -59,9 +57,9 @@ export default (vueElement, googleMapsElement, props, options) => {
             afterModelChanged(attribute, attributeValue);
           }
 
-          updateTick()
+          updateTick();
         }
-      }
+      };
 
       trackProperties.forEach(propName => {
         // When any props change -- assume they change on the same tick

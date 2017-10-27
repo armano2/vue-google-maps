@@ -582,18 +582,6 @@ Set in `deferredReady`.
 ##### `mouseover`
 ##### `mouseout`
 
-### `Cluster` class (mixes in `MapElementMixin`)
-
-To use this class in standalone mode, you need to include the following:
-```js
-<script src="https://cdn.rawgit.com/mahnunchik/markerclustererplus/2.1.4/dist/markerclusterer.min.js"></script>
-```
-
-To use this class with NPM, you need to `npm install marker-clusterer-plus`.
-
-Place `Marker` objects within `<gmap-cluster></gmap-cluster>`
-in order to use marker clustering.
-
 #### Properties
 ##### `maxZoom : number`
 ##### `calculator : function`
