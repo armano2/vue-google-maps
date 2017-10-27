@@ -3,13 +3,13 @@ const path = require('path');
 const fs = require('fs');
 
 // Write out the list of examples to the examples index
-const examplesDir = path.resolve(__dirname, 'components')
+const examplesDir = path.resolve(__dirname, 'components');
 const examplesIndex = fs.readdirSync(
   examplesDir
 )
   .filter(f => f.endsWith('.vue'))
   .map(f => {
-    const baseFileName = path.basename(f, '.vue')
+    const baseFileName = path.basename(f, '.vue');
 
     return `
 import E${baseFileName}_Source from ${JSON.stringify(`!!raw-loader!${examplesDir}/${f}`)}
@@ -21,8 +21,8 @@ examples.push({
   source: E${baseFileName}_Source,
   description: E${baseFileName}_Module.description,
 })
-    `
-  })
+    `;
+  });
 
 fs.writeFileSync(
   path.resolve(__dirname, 'examples-index.js'),
@@ -33,7 +33,7 @@ ${examplesIndex.join('\n')}
 
 export default examples
   `
-)
+);
 
 const base = {
   output: {
@@ -87,4 +87,4 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = [
   Object.assign({}, base, {entry: './src/main.js', output: Object.assign({}, base.output, {filename: 'build.js'})}),
   Object.assign({}, base, {entry: './src/ExamplesMain.js', output: Object.assign({}, base.output, {filename: 'build-examples.js'})}),
-]
+];
