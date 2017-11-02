@@ -54,7 +54,7 @@ export default (vueElement, googleMapsElement, props, options) => {
           googleMapsElement[setMethodName](vueElement[attribute]);
 
           if (afterModelChanged) {
-            afterModelChanged(attribute, attributeValue);
+            afterModelChanged(attribute, vueElement[attribute]);
           }
 
           updateTick();

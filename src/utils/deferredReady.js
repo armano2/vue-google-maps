@@ -39,7 +39,7 @@ function runHooks(vm) {
   var beforePromise = vm.beforeDeferredReady ?
     ((typeof vm.beforeDeferredReady.then === 'function') ?
       vm.beforeDeferredReady : Promise.all(vm.beforeDeferredReady))
-      : Promise.resolve(null);
+    : Promise.resolve(null);
 
   beforePromise.then(() => {
     if (typeof hooks === 'function') {
@@ -55,9 +55,9 @@ function runHooks(vm) {
     // execute all handlers, expecting them to return promises
     // wait for the promises to complete, before allowing child to execute
   })
-  .then(() => {
-    vm.$deferredReadyPromiseResolve();
-  });
+    .then(() => {
+      vm.$deferredReadyPromiseResolve();
+    });
 }
 
 export var DeferredReadyMixin = {
@@ -92,9 +92,9 @@ export var DeferredReadyMixin = {
       runHooks(this);
     } else {
       this.$deferredReadyAncestor.$deferredReadyPromise
-      .then(() => {
-        runHooks(this);
-      });
+        .then(() => {
+          runHooks(this);
+        });
     }
   },
 };

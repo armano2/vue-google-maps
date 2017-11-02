@@ -1,4 +1,4 @@
-import {omit, clone} from 'lodash'
+import {omit, clone} from 'lodash';
 
 import eventBinder from '../utils/eventsBinder.js';
 import propsBinder from '../utils/propsBinder.js';

@@ -61,8 +61,8 @@ export default {
   methods: {
     createCircle (options) {
       this.$circleObject = new google.maps.Circle(options);
-            // we cant bind bounds because there is no `setBounds` method
-            // on the Circle object
+      // we cant bind bounds because there is no `setBounds` method
+      // on the Circle object
       const boundProps = clone(props);
       delete boundProps.bounds;
       propsBinder(this, this.$circleObject, boundProps);

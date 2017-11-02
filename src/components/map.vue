@@ -189,9 +189,9 @@ export default {
 
       return this.$mapCreated;
     })
-    .catch((error) => {
-      throw error;
-    });
+      .catch((error) => {
+        throw error;
+      });
   },
   methods: methods
 };

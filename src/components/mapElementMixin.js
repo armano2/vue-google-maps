@@ -10,7 +10,6 @@ import {DeferredReadyMixin} from '../utils/deferredReady';
  *
  * */
 export default {
-
   mixins: [DeferredReadyMixin],
 
   created() {
@@ -52,5 +51,4 @@ export default {
       return null;
     }
   }
-
 };

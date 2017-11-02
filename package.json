@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "test": "npm run lint && npm run lab-tests",
-    "lint": "eslint --ext .vue,.js src && eslint --ext .vue,.html,.js examples"
+    "lint": "eslint --ext .vue,.js src --fix"
   },
   "repository": {
     "type": "git",
